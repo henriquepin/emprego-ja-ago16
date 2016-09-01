@@ -1,13 +1,14 @@
-<p><%= form_for @job do |f| %></p>
+
 <p>Criar nova vaga</p>
+<%= form_for @job do |f| %>
   <%= f.label :title, "Título" %>
-  <h1><%= f.text_field :title %></h1>
+  <%= f.text_field :title %>
   <%= f.label :location, "Local" %>
   <%= f.text_field :location %>
   <%= f.label :category, "Categoria" %>
   <%= f.text_field :category %>
   <%= f.label :company_id, "Empresa" %>
-  <%= f.collection_select(:company_id, Company.all, :id, :name)%>
+  <%= f.collection_select(:company_id, @companies, :id, :name)%>
   <%= f.label :description, "Descrição" %>
   <%= f.text_field :description %>
   <%= f.check_box(:featured) %>
