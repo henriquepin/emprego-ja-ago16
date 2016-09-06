@@ -1,0 +1,9 @@
+<h1><%= @category.name %></h1>
+<p><% @category.jobs.each do |job|%> </p>
+  <%= job.title%>
+  <%= job.location%>
+<%end%>
+
+<%if @category.jobs.empty?%>
+  <%= "Nenhuma vaga disponível"%>
+<%end%>
