@@ -14,14 +14,13 @@ feature 'User create categories' do
   end
 
   scenario 'unsucessfully' do
-    category = Category.new(name: 'Estagiario')
 
     visit new_category_path
 
-    fill_in 'Nome',          with: ''
 
     click_on 'Criar categoria'
 
-      
+    expect(page).to have_content("Não foi possível criar categoria")
+
   end
 end
