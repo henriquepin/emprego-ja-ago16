@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
     @company = Company.find params[:id]
   end
 
+
   private
   def company_params
     params.require(:company).permit(:name, :location, :mail, :phone)

@@ -9,5 +9,9 @@
 <%end%>
 
 <%if @company.jobs.empty?%>
-  <%= "Nenhuma vaga disponível" %>
+   Nenhuma vaga disponível
 <%end%>
+
+<% if @company.premium? %>
+  <%= image_tag "estrela.png" %>
+<% end %>
